@@ -1,7 +1,6 @@
 //1. What are the outputs of these expressions: '7' + 1 + 5 and 1 + 5 + '7';
 //  715 and 67
 
-
 //2. Swap 2 variables.
 //  a. With third variable;
 //  b. With arithmetic operators.
@@ -13,54 +12,36 @@
 //  k = b;
 
 // let a = 5;
-// let b = ++a;
-// a = b--
+// let b = 6;
+//  a = a+b;
+//  b = a-b;
+//  a = a-b
 
 // let a = 5;
 // let b = 6;
 
 // [a,b] = [b,a]
 
-
 //3. Check whether a given number is negative. Print “yes”, if it is not negative, print “no” otherwise.
 
-// function checkNumberNegative(num) {
-//  if(num > 0 && num!=0) {
-//      return 'yes'
-//  }if(num < 0 || num ===0) {
-//      return 'no'
-//  }
+// function checkNumberNegative(number) {
+//   return (number <= 0 && "no") || "yes";
 // }
 // console.log(checkNumberNegative(0));
 
-
 //4. Given two numbers print 1 if one of them is divisible by the other one, otherwise print 0.
 
-
-// function checkNumbers(x,y) {
-//     if(x % y == 0 || y % x == 0) {
-//         return 1
-//     }else if(x % y !=0 && y % x != 0) {
-//         return 0
-//     }
+// function checkNumbers(x, y) {
+//   return (x % y == 0 || y % x == 0) && "1" || "0"
 // }
-// console.log(checkNumbers(15,3))
-
+// console.log(checkNumbers(10,20));
 
 //5.Given three numbers. Find the maximum one
 
-// function findMaxNumber(a,b,c) {
-//     if(a > b && b > c || a > b && a > c ) {
-//         return a
-//     }else if(a < b && b > c) {
-//         return b
-//     }else if(c > b && b > a || c > b && b < a) {
-//         return c
-//     }
-
+// function findMaxNumber(a, b, c) {
+//   return (a > b && a > c) && a || (b > a && b > c) && b || c;
 // }
-// console.log(findMaxNumber(30,55,5))
-
+// console.log(findMaxNumber(25, 7, 5));
 
 //6.. Given string ‘test’. Use variables and string methods and print ‘tetsetesesesesteest’;
 
@@ -73,8 +54,5 @@
 //     let str5 = str.substr(1,3)
 //     stringTest+= str1 + str2 + str3 + str3 + str3 + str3 + str4 + str5
 //     return stringTest
-
-
 // }
 // console.log(getTest('test'));
-
