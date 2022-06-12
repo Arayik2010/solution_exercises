@@ -56,3 +56,100 @@
 //     return stringTest
 // }
 // console.log(getTest('test'));
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+// 1. Given two numbers 1 and 10;
+//     a. Print all number between 1 and 10.
+//     b. Print all number between 1 and 10 except 6.
+//    c. Print all even number between 1 and 10.
+//   d. Calculate sum of all numbers between 1 and 10 (using loop).
+//  e. Calculate sum of all numbers between 1 and 10 except 8.
+//  f. Calculate sum of all odd numbers between 1 and 10.
+//  g. Calculate sum of squares of all numbers between 1 and 10.
+
+// a.
+// for(let i = 1; i <= 10;i++)  {
+//     console.log(i)
+// }
+
+//b.
+// for (let i = 1; i <= 10; i++) {
+//   if (i === 6) {
+//     continue;
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+//c.
+// for(let i = 1; i <=10; i++) {
+//     if(i % 2 === 0) {
+//         console.log(i)
+//     }
+// }
+
+//d.
+// let num = 0;
+// for (let i = 1; i <= 10; i++) {
+//   num += i;
+// }
+// console.log(num);
+
+//e
+// let num = 0;
+// for (let i = 1; i <= 10; i++) {
+//   if (i === 8) {
+//     continue;
+//   } else {
+//     num += i;
+//   }
+// }
+// console.log(num);
+
+//f.
+// let num = 0;
+// for (let i = 1; i <= 10; i++) {
+//   if (i % 2 !== 0) {
+//     num += i;
+//   }
+// }
+// console.log(num);
+
+//g.
+// let num = 0;
+// for (let i = 1; i <= 10; i++) {
+//   num += i*i;
+// }
+// console.log(num);
+
+//3. . Enter a number. Reverse its first and last digits. Print the new number.
+
+// function reverseNumber(num) {
+//     let str = ''
+
+//   if (num < 10) {
+//     return num;
+//   } else {
+//     str+= (num % 10);
+//     str += reverseNumber(Math.floor(num / 10));
+//   }
+//   return parseInt(str)
+
+// }
+
+// console.log(reverseNumber(29));
+
+//4. Enter a number. Find the difference between its biggest and smallest digits.
+
+// function diferentsNumbers(num) {
+//     let arr = String(num).split('')
+//     let sortArr = arr.sort((a,b)=> a-b)
+//     for(let i = 0; i < sortArr.length; i++) {
+//         return sortArr[sortArr.length -1] - sortArr[0]
+//     }
+
+// }
+// console.log(diferentsNumbers(3548))
+
+//5.Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise.
