@@ -153,3 +153,20 @@
 // console.log(diferentsNumbers(3548))
 
 //5.Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise.
+
+// function numPrime(num) {
+//     let isPrime = "yes"
+//   if(num === 1) {
+//     return "yes"
+//   }else if(num>1) {
+//     for (let i = 2; i < num; i++) {
+//       if (num % i == 0) {
+//         isPrime = "no";
+//         break;
+//       }
+//     }
+//   }
+//   return isPrime
+// }
+// console.log(numPrime(6));
+
