@@ -170,3 +170,164 @@
 // }
 // console.log(numPrime(6));
 
+////////////////////////////////////////////////////////
+//1.// 1.   You have some 3 async functions. Need to create function which get that 3 functions
+//    and some callback in arguments and call that callback when last async function was
+//    ending and send that function returning data to callback. That 3 functions have 1
+//    callback arguments.
+
+// function getNum1(arr, callbackList) {
+//   setTimeout(() => {
+//     const result = 1;
+//     arr.push(result);
+//     callbackList[arr.length](arr, callbackList);
+//   }, 2000);
+// }
+
+// function getNum2(arr, callbackList) {
+//   setTimeout(() => {
+//   const result = 2;
+//     arr.push(result);
+//     callbackList[arr.length](arr, callbackList);
+//   }, 2000);
+// }
+
+// function getNum3(arr, callbackList) {
+//   setTimeout(() => {
+//      const result = 3;
+//     arr.push(result);
+//      callbackList[arr.length](arr, callbackList);
+//   }, 2000);
+// }
+
+// function funcs(a,b,c,callbackFunc) {
+//   const result = [];
+//    a(result, [a,b,c,callbackFunc]);
+// }
+
+// function callback(result) {
+//     console.log(result)
+// }
+
+// funcs(getNum1,getNum2,getNum3, callback)
+
+//2.// 2.   You have some 3 async Promises. create some function (like promise all,race ….)
+//    which will get promises and return some promise which will invoked on last finished
+//    promise time and will send that last returned value to resolve function, or reject some
+//    error on error case
+
+// const p1 = new Promise((resolve, reject) => {
+//   resolve(1);
+// });
+// const p2 = new Promise((resolve, reject) => {
+//   resolve(2);
+// });
+// const p3 = new Promise((resolve, reject) => {
+//   resolve (3);
+// });
+
+// Promise.all([p1, p2, p3,])
+//   .then((result) => {
+//     setTimeout(() => {
+//       console.log(result);
+//     }, 2000);
+//   })
+
+//////////////////////////////////////////////////////////////
+
+//1. Write a function that accepts a string(a sentence) as a parameter and finds the
+// longest word within the string․ If there are several words which are the longest ones,
+//print the last word(words can be separated by space, comma or hyphen).,
+
+// function findLongestWord(str) {
+
+//  let arr = str.match(/\w[a-z]{0,}/gi);
+//  let result = arr[0];
+
+//  for (let i = 0; i < arr.length; i++) {
+//    if (result.length <= arr[i].length) {
+//      result = arr[i];
+//    }
+//  }
+//  return result;
+
+// }
+// console.log(findLongestWord("hello, word  buyyy, hi "));
+
+//2.Write a function to find longest substring in a given a string without repeating
+//characters except space character.
+//  If there are several, return the last one. Consider that all letters are lowercase.
+
+//  function getLongestSubstring(str) {
+//    let str1  = str.toLowerCase();
+//    let arr = str1.split(' ')
+//     var result = arr[0];
+
+//     for (var i = 0; i < arr.length; i++) {
+//       if (result.length <= arr[i].length) {
+//         result = arr[i];
+//       }
+//     }
+//     return result;
+//  }
+//  console.log(getLongestSubstring('HELLO Karen '))
+
+//3.Write a function, which receives two numbers as arguments and finds all numbers
+//between them such that each digit of the number is even. The numbers obtained
+// should be printed in a comma-separated sequence on a single line
+
+// function isEven(num) {
+//   if (num % 2 === 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function getNums(a, b) {
+//   let arr = [];
+//   for (let i = a+1; i < b; i++) {
+//    if(isEven(i)) {
+//     arr.push(i)
+//    }
+//   }
+//   return arr
+// }
+// console.log(getNums(1,10));
+
+//4.Write a function, which receives an array as an argument which elements arrays of
+//numbers. Find biggest negative number of each array. Return product of that
+//numbers.If there is not any negative number in an array, ignore that one. Check that
+//items of the given array are arrays.
+
+// function findBigNegativNum(arr) {
+//   let arr2 = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       arr2.push(arr[i] * -1);
+//     }
+//   }
+//   arr2.sort((a, b) => a - b);
+//   return arr2[arr2.length - 1];
+// }
+// console.log(findBigNegativNum([[1], [2], [3]]));
+
+//5.Given an array of strings and numbers. Print the number of integers and the number
+//of strings in the array
+
+// function checkArr(arr) {
+//   let arr1 = [];
+//   let count = 0
+//   for (let i = 0; i < arr.length; i++) {
+//     if (isNaN(arr[i])) {
+//      count++
+//     }else{
+//         arr1.push(arr[i])
+//     }
+//   }
+//   return `the number of integers ${arr1}  and the number
+//   of strings in the array ${count} `;
+// }
+// console.log(checkArr([1, 5, "hello", "buy", 6]));
+
