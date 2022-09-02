@@ -331,3 +331,283 @@
 // }
 // console.log(checkArr([1, 5, "hello", "buy", 6]));
 
+//6.Given an array consisting from the arrays of numbers (like a two-dimensional array).
+//Find sum of each row and print them as an array
+
+// function setArrNumSum(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let k = 0; k < arr[i].length; k++) {
+//       sum += arr[i][k];
+//     }
+//   }
+//   return sum
+// }
+// console.log(
+//   setArrNumSum([
+//     [0, 1, 2],
+//     [3, 4, 5],
+//   ])
+// );
+
+// const age = [1, 5, 9, 51, 16, 99, 100, 6, 8, 15, 19];
+// function insertionSort(arr) {
+//   let i,
+//     len = arr.length,
+//     el,
+//     j;
+//   for (i = 1; i < len; i++) {
+//     el = arr[i];
+//     j = i;
+//     while (j > 0 && arr[j - 1] > el) {
+//       arr[j] = arr[j - 1];
+//       j--;
+//     }
+//     arr[j] = el;
+//   }
+//   return arr;
+// }
+// console.time();
+// console.log("insertionSort", insertionSort(age));
+// console.timeEnd();
+
+// function mergeSort(arr) {
+//   var len = arr.length;
+//   if (len < 2) return arr;
+//   var mid = Math.floor(len / 2),
+//     left = arr.slice(0, mid),
+//     right = arr.slice(mid);
+//   return merge(mergeSort(left), mergeSort(right));
+// }
+
+// function merge(left, right) {
+//   let result = [],
+//     lLen = left.length,
+//     rLen = right.length,
+//     l = 0,
+//     r = 0;
+//   while (l < lLen && r < rLen) {
+//     if (left[l] < right[r]) {
+//       result.push(left[l++]);
+//     } else {
+//       result.push(right[r++]);
+//     }
+//   }
+//   return result.concat(left.slice(l)).concat(right.slice(r));
+
+// }
+// console.time();
+// console.log("mergeSort", mergeSort(age));
+// console.timeEnd();
+
+// console.time();
+// console.log(
+//   "customSOrt",
+//   age.sort((a, b) => a - b)
+// );
+// console.timeEnd();
+
+// var items = [1, 5, 9, 51, 16, 99, 100, 6, 8, 15, 19];
+// function swap(items, leftIndex, rightIndex){
+//     var temp = items[leftIndex];
+//     items[leftIndex] = items[rightIndex];
+//     items[rightIndex] = temp;
+// }
+// function partition(items, left, right) {
+//     var pivot   = items[Math.floor((right + left) / 2)],
+//         i       = left,
+//         j       = right;
+//     while (i <= j) {
+//         while (items[i] < pivot) {
+//             i++;
+//         }
+//         while (items[j] > pivot) {
+//             j--;
+//         }
+//         if (i <= j) {
+//             swap(items, i, j);
+//             i++;
+//             j--;
+//         }
+//     }
+//     return i;
+// }
+
+// function quickSort(items, left, right) {
+//     var index;
+//     if (items.length > 1) {
+//         index = partition(items, left, right);
+//         if (left < index - 1) {
+//             quickSort(items, left, index - 1);
+//         }
+//         if (index < right) {
+//             quickSort(items, index, right);
+//         }
+//     }
+//     return items;
+// }
+
+// var sortedArray = quickSort(items, 0, items.length - 1);
+
+// function sortAgePeoples(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+
+//   let temp  = arr[0];
+
+//   let left = [];
+//   let right = [];
+
+//   for (var i = 1; i < arr.length; i++) {
+//     arr[i] < temp ? left.push(arr[i]) : right.push(arr[i]);
+//   }
+
+//   return sortAgePeoples(left).concat(temp, sortAgePeoples(right));
+// }
+
+// console.log(sortAgePeoples([1, 5, 9, 51, 16, 99, 100, 6, 8, 15, 19]));
+
+////////OOP////////////
+// 1.   Create a Rectangle class. Rectangle should have: length and width.
+//    It should have getters and setters for all fields.
+//    It should have getArea() method.It should have getArea() method.
+//    It should have getPerimeter() method.
+//    It should have a toString method
+
+// class Rectangle {
+//   constructor(length, width) {
+//     this._length = length;
+//     this._width = width;
+//   }
+//   get length() {
+//     return this._length;
+//   }
+//   get width() {
+//     return this._width;
+//   }
+
+//   set length(value) {
+//     if (value <= 0) {
+//       console.log("wrong size");
+//     } else {
+//       console.log(this._length);
+//     }
+//   }
+//   set width(value1) {
+//     if (value1 <= 0) {
+//       console.log("wrong size");
+//     } else {
+//       console.log(this._width);
+//     }
+//   }
+
+//   getArea() {
+//     return this._length * this._width;
+//   }
+//   getPerimeter() {
+//     return (this._length + this._width) * 2;
+//   }
+//   toString() {
+//     return (`rectangle length is ${this._length} and width is ${this._width}`)
+//   }
+
+
+// }
+
+// let rectangle = new Rectangle(5, 26);
+
+
+
+// 2.   Create an object called shape that has the type property and a getType() method.
+//    Define a Triangle() constructor function whose prototype is shape . Objects created
+//    with Triangle() should have three properties — a, b, and c , representing the lengths
+//    of the sides of a triangle.
+//    Add a new method to the prototype called getPerimeter()
+
+// let shape = {
+//   type: 'triangle',
+//   getType() {
+//     return this.type;
+//   },
+// };
+
+// function Triangle (a,b,c) {
+//   this.a = a,
+//   this.b = b,
+//   this.c = c
+  
+// }
+
+
+// Triangle.prototype.getPerimeter = function () {
+//   console.log(this.a + this.b + this.c);
+// };
+// let triangle = new Triangle(2,3,4)
+// triangle.prototype = Object.create(shape);
+
+
+// console.log(triangle);
+
+
+// 3.   Create an Author class and a Book class.
+//    Author should have: name, email, gender. 
+//    It should have getters.
+//    It should have a toString method. 
+//    Book should have: title, author(Author), price, quantity.
+//    It should have appropriate getters and setters. 
+//    It should have a method: getProfit(), which calculates the profit from the book based 
+//    on the price and quantity. 
+//    It should have a toString method. 
+
+
+// class Author{
+//   constructor(name,email,gender) {
+//     this.name = name,
+//     this.email = email,
+//     this.gender = gender
+//   }
+//   get getName() {
+//     return this.name
+//   }
+//   get getEmail () {
+//     return this.email
+//   }
+//   get getgetGender() {
+//     return this.gender
+//   }
+//   toString() {
+//     return (`author name is ${this.name} email is ${this.email} and gender is ${this.gender}`)
+//   }
+
+// }
+
+// class Book extends Author{
+//   constructor(bookName,name,price,quantity) {
+//     super(name)
+//     this.bookName = bookName,
+//     this.price = price,
+//     this.quantity = quantity
+
+//   }
+//   get getBookName() {
+//     return (`Book's name is ${this.bookName}`)
+//   }
+//   get getPrice() {
+//     return (`the book's  price ${this.price}`)
+//   }
+//   get getQuantity() {
+//     return (`the books quantity is ${this.quantity}`)
+//   }
+//   getProfit() {
+//     return (`the book's profit ${this.quantity * this.price}$`)
+//   }
+//   toString() {
+//     return (`the book write is ${this.name}`)
+//   }
+// }
+
+// let author = new Author('Arayik','ar@mail.com','male')
+// let book  = new Book ('Harry Potter','Arayik',500,25)
+
+
