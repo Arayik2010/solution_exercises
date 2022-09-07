@@ -512,12 +512,9 @@
 //     return (`rectangle length is ${this._length} and width is ${this._width}`)
 //   }
 
-
 // }
 
 // let rectangle = new Rectangle(5, 26);
-
-
 
 // 2.   Create an object called shape that has the type property and a getType() method.
 //    Define a Triangle() constructor function whose prototype is shape . Objects created
@@ -536,9 +533,8 @@
 //   this.a = a,
 //   this.b = b,
 //   this.c = c
-  
-// }
 
+// }
 
 // Triangle.prototype.getPerimeter = function () {
 //   console.log(this.a + this.b + this.c);
@@ -546,20 +542,17 @@
 // let triangle = new Triangle(2,3,4)
 // triangle.prototype = Object.create(shape);
 
-
 // console.log(triangle);
 
-
 // 3.   Create an Author class and a Book class.
-//    Author should have: name, email, gender. 
+//    Author should have: name, email, gender.
 //    It should have getters.
-//    It should have a toString method. 
+//    It should have a toString method.
 //    Book should have: title, author(Author), price, quantity.
-//    It should have appropriate getters and setters. 
-//    It should have a method: getProfit(), which calculates the profit from the book based 
-//    on the price and quantity. 
-//    It should have a toString method. 
-
+//    It should have appropriate getters and setters.
+//    It should have a method: getProfit(), which calculates the profit from the book based
+//    on the price and quantity.
+//    It should have a toString method.
 
 // class Author{
 //   constructor(name,email,gender) {
@@ -610,4 +603,68 @@
 // let author = new Author('Arayik','ar@mail.com','male')
 // let book  = new Book ('Harry Potter','Arayik',500,25)
 
+// 4.   Write Car class, which have
+//    properties:
+// static finishPosition: number
+// name: string,
+// color: string(hashcode of color), #ffffff
+// currentPosition: number(on start it equal to 0),
+// intervalPinter: number(setInterval pointer, that need for stopping interval)
+// speed: number(ex. 10, it means car can go 10px for 1 second),
+// methods:
+// reset() -> it will reset currentPosition to 0
+// start() -> it should update currentPosition value by speed each 300ms(with
+// setInterval) and log it to console, if currentPosition equal
+// or more then finishPosition,
+// then call stop method
+// stop() -> will stop interval and log`[name] car was finished`
+// set some finishPosition value for Car
+// create 3 Cars with different parameters
+// create function that will start car competition
+
+class Car {
+  static finishPosition = 21;
+
+  constructor(name, color,speed) {
+    this._name = name;
+    this._color = color;
+    this._currentPosition = 0;
+    this._speed = speed;
+  }
+
+  reset() {
+    if (Car.finishPosition <= this._currentPosition) {
+      this._currentPosition = 0;
+    }
+  }
+
+  stop(timerId) {
+    clearInterval(timerId);
+    console.log("Winner is ", this._name);
+    // return;
+  }
+
+  start() {
+    const id = setInterval(() => {
+      this._currentPosition += (300*this._speed)/1000;
+      if (this._currentPosition >= Car.finishPosition) {
+        this.stop(id);
+      }
+    }, 300);
+    return this._currentPosition;
+  }
+}
+
+let carOne = new Car("Reng", "#D37328 ", 10);
+let carTwo = new Car("BMW", "#171716 ", 15);
+let carThree = new Car("Dodge", "#1B8CD6 ", 12);
+
+function competition(cars) {
+  return cars.forEach((car) => {
+    car.start();
+  });
+}
+
+
+competition([carOne, carTwo, carThree]);
 
