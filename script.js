@@ -622,49 +622,125 @@
 // create 3 Cars with different parameters
 // create function that will start car competition
 
-class Car {
-  static finishPosition = 21;
+// class Car {
+//   static finishPosition = 21;
 
-  constructor(name, color,speed) {
-    this._name = name;
-    this._color = color;
-    this._currentPosition = 0;
-    this._speed = speed;
-  }
+//   constructor(name, color,speed) {
+//     this._name = name;
+//     this._color = color;
+//     this._currentPosition = 0;
+//     this._speed = speed;
+//   }
 
-  reset() {
-    if (Car.finishPosition <= this._currentPosition) {
-      this._currentPosition = 0;
-    }
-  }
+//   reset() {
+//     if (Car.finishPosition <= this._currentPosition) {
+//       this._currentPosition = 0;
+//     }
+//   }
 
-  stop(timerId) {
-    clearInterval(timerId);
-    console.log("Winner is ", this._name);
-    // return;
-  }
+//   stop(timerId) {
+//     clearInterval(timerId);
+//     console.log("Winner is ", this._name);
+//     // return;
+//   }
 
-  start() {
-    const id = setInterval(() => {
-      this._currentPosition += (300*this._speed)/1000;
-      if (this._currentPosition >= Car.finishPosition) {
-        this.stop(id);
-      }
-    }, 300);
-    return this._currentPosition;
-  }
-}
+//   start() {
+//     const id = setInterval(() => {
+//       this._currentPosition += (300*this._speed)/1000;
+//       if (this._currentPosition >= Car.finishPosition) {
+//         this.stop(id);
+//       }
+//     }, 300);
+//     return this._currentPosition;
+//   }
+// }
 
-let carOne = new Car("Reng", "#D37328 ", 10);
-let carTwo = new Car("BMW", "#171716 ", 15);
-let carThree = new Car("Dodge", "#1B8CD6 ", 12);
+// let carOne = new Car("Reng", "#D37328 ", 10);
+// let carTwo = new Car("BMW", "#171716 ", 15);
+// let carThree = new Car("Dodge", "#1B8CD6 ", 12);
 
-function competition(cars) {
-  return cars.forEach((car) => {
-    car.start();
-  });
-}
+// function competition(cars) {
+//   return cars.forEach((car) => {
+//     car.start();
+//   });
+// }
 
+// competition([carOne, carTwo, carThree]);
 
-competition([carOne, carTwo, carThree]);
+//////////////////////////////////////////////////////////
 
+// 1. Have 2 functions validateName(which get argument some string and return true if it valid name or false otherwise (Name is valid if have 2 parts. like Jon Doe, and not  empty))
+//  and validateAge(get number argument and return true if value > 19 ).
+// Create some functions by currying,so I can filter list of users by valid name and age.
+
+// function validateName(str) {
+//   let arr = str.split(" ");
+//   if (arr.length === 2) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function validateAge(num) {
+//   if (num > 19) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// let users = [
+//   { name: "jack babken", age: 15 },
+//   { name: "asd D", age: 34 },
+//   { name: "DD", age: 999 },
+// ];
+
+// function curry() {
+//   return () => {
+//     return users.filter((user) => {
+//       if (validateName(user.name) && validateAge(user.age)) {
+//         return user
+//       }
+//     });
+//   };
+// }
+
+// console.log(curry()());
+
+// 4.   Create an infinite sequence that generates the next value of the Fibonacci sequence.
+//    The Fibonacci sequence is defined as follows:
+// fib(0) = 0
+// fib(1) = 1
+// for n > 1, fib(n) = fib(n - 1) + fib(n - 2)
+
+// function fib(n) {
+//   if(n <= 1) {
+//     return n
+//   }else{
+//     return fib(n -1) + fib(n-2)
+//   }
+// }
+// console.log(fib(8));
+
+// 5.   Create async generator function which will get 3 promise arguments and will yeald
+//    from latest to first finished promise values
+// example -> for
+// Promise1 -> (200ms, result: 15),
+// Promise2 -> (600ms, result: 17),
+// Promise3 -> (500ms, result: 42),
+// result will be 17, 42, 15.
+
+// async function* generatеSeqondAsync() {
+//   yield await new Promise((resolve) => setTimeout(() => resolve(17), 600));
+//   yield await new Promise((resolve) => setTimeout(() => resolve(42), 500));
+//    yield await new Promise((resolve) => setTimeout(() => resolve(15), 200));
+// }
+
+// async function printSecondAsync() {
+//   const secondGenerator = generatеSeqondAsync();
+//   for await(second of secondGenerator){
+//     console.log(second)
+//   }
+// }
+// printSecondAsync()
